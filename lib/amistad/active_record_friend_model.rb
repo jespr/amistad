@@ -66,7 +66,7 @@ module Amistad
     # approve a friendship invitation. If the operation succeeds, the method returns true, else false
     def approve(user)
       friendship = find_any_friendship_with(user)
-      return false if friendship.nil? || invited?(user)
+      return false if friendship.nil? || self.invited?(user)
       friendship.update_attribute(:pending, false)
     end
 
