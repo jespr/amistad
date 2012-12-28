@@ -34,7 +34,7 @@ module Amistad
         :source => :friendable,
         :conditions => { :'friendships.pending' => true, :'friendships.blocker_id' => nil }
 
-      has_many  :invited_by,
+      has_many  :invited_by_user,
         :through => :inverse_friendships,
         :source => :friendable,
         :conditions => { :'friendships.pending' => false, :'friendships.blocker_id' => nil }
